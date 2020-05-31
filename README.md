@@ -1,8 +1,17 @@
-# Vue Grid Responsive
+<div align="center">
 
-[![npm version](https://badge.fury.io/js/vue-grid-responsive.svg)](https://www.npmjs.com/package/vue-grid-responsive) &bull; [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/andrelmlins/vue-grid-responsive/blob/master/LICENSE) &bull; [![Build Status](https://travis-ci.com/andrelmlins/vue-grid-responsive.svg?branch=master)](https://travis-ci.com/andrelmlins/vue-grid-responsive)
+<img alt="Vue Framework" src="https://vuejs.org/images/logo.png" width="100">
+
+<h1>Vue Grid Responsive</h1>
 
 Responsive grid system based on Bootstrap for Vue.
+
+</div>
+
+<br />
+<br />
+
+[![npm version](https://badge.fury.io/js/vue-grid-responsive.svg)](https://www.npmjs.com/package/vue-grid-responsive) &bull; [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/andrelmlins/vue-grid-responsive/blob/master/LICENSE) &bull; [![Build Status](https://travis-ci.com/andrelmlins/vue-grid-responsive.svg?branch=master)](https://travis-ci.com/andrelmlins/vue-grid-responsive)
 
 ## Installation
 
