@@ -1,0 +1,22 @@
+{
+  "name": "vue-grid-responsive",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/vue-grid-responsive.umd.js",
+  "module": "dist/vue-grid-responsive.esm.js",
+  "unpkg": "dist/vue-grid-responsive.min.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "rollup": "^2.12.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-vue": "^5.1.6",
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
