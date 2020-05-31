@@ -1,15 +1,27 @@
 {
   "name": "vue-grid-responsive",
   "version": "0.1.0",
+  "description": "Responsive grid system based on Bootstrap for Vue",
   "license": "MIT",
   "main": "dist/vue-grid-responsive.umd.js",
   "module": "dist/vue-grid-responsive.esm.js",
   "unpkg": "dist/vue-grid-responsive.min.js",
+  "repository": "https://github.com/andrelmlins/vue-grid-responsive",
+  "author": "André Lins <andrelucas01@hotmail.com> (https://andrelmlins.github.io/)",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public"
   },
+  "bugs": {
+    "url": "https://github.com/andrelmlins/vue-grid-responsive/issues"
+  },
+  "keywords": [
+    "vue",
+    "grid",
+    "responsive",
+    "bootstrap"
+  ],
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
