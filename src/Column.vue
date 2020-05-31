@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "Column",
+  name: 'Col',
   data() {
     let styleGeneral = this.createStyleSize();
 
@@ -26,40 +26,37 @@ export default {
     sm: Number,
     md: Number,
     lg: Number,
-    xl: Number,
-    localColumns: {
-      type: Number,
-      default: 12
-    }
+    xl: Number
   },
   methods: {
     getValue(breakpoint) {
-      if (breakpoint > this.localColumns) {
-        breakpoint = this.localColumns;
+      const localColumns = this.$parent.columns;
+      if (breakpoint > localColumns) {
+        breakpoint = localColumns;
       }
 
-      return breakpoint ? `${(breakpoint / this.localColumns) * 100}%` : false;
+      return breakpoint ? `${(breakpoint / localColumns) * 100}%` : false;
     },
     createClassSize() {
-      let newClass = "col-xs ";
+      let newClass = 'col-xs ';
 
-      newClass += this.sm ? "col-sm " : "";
-      newClass += this.md ? "col-md " : "";
-      newClass += this.lg ? "col-lg " : "";
-      newClass += this.xl ? "col-xl " : "";
+      newClass += this.sm ? 'col-sm ' : '';
+      newClass += this.md ? 'col-md ' : '';
+      newClass += this.lg ? 'col-lg ' : '';
+      newClass += this.xl ? 'col-xl ' : '';
 
       return newClass;
     },
     createStyleSize() {
-      let newStyle = "";
+      let newStyle = '';
 
       newStyle += this.xs
         ? `--xsWidthSGR:${this.getValue(this.xs)}; `
         : `--xsWidthSGR:100%; `;
-      newStyle += this.sm ? `--smWidthSGR:${this.getValue(this.sm)}; ` : "";
-      newStyle += this.md ? `--mdWidthSGR:${this.getValue(this.md)}; ` : "";
-      newStyle += this.lg ? `--lgWidthSGR:${this.getValue(this.lg)}; ` : "";
-      newStyle += this.xl ? `--xlWidthSGR:${this.getValue(this.xl)}; ` : "";
+      newStyle += this.sm ? `--smWidthSGR:${this.getValue(this.sm)}; ` : '';
+      newStyle += this.md ? `--mdWidthSGR:${this.getValue(this.md)}; ` : '';
+      newStyle += this.lg ? `--lgWidthSGR:${this.getValue(this.lg)}; ` : '';
+      newStyle += this.xl ? `--xlWidthSGR:${this.getValue(this.xl)}; ` : '';
 
       return newStyle;
     }

@@ -6,7 +6,9 @@
   "module": "dist/vue-grid-responsive.esm.js",
   "unpkg": "dist/vue-grid-responsive.min.js",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
@@ -14,8 +16,12 @@
     "rollup": "^2.12.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-livereload": "^1.3.0",
     "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^6.1.0",
     "rollup-plugin-vue": "^5.1.6",
+    "sirv-cli": "^0.4.6",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   }

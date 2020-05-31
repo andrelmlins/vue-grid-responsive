@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "Row",
+  name: 'Row',
   data() {
     return {
       styleGeneral: this.createGutter(this.gutter)
@@ -23,7 +23,7 @@ export default {
     createGutter(gutter) {
       return gutter
         ? `--paddingSGR:${gutter / 2}px;--marginSGR:-${gutter / 2}px`
-        : "--paddingSGR:0;--marginSGR:0";
+        : '--paddingSGR:0;--marginSGR:0';
     }
   }
 };
