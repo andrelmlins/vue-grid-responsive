@@ -22,8 +22,8 @@ export default {
   methods: {
     createGutter(gutter) {
       return gutter
-        ? `--paddingSGR:${gutter / 2}px;--marginSGR:-${gutter / 2}px`
-        : '--paddingSGR:0;--marginSGR:0';
+        ? `--paddingVGR:${gutter / 2}px;--marginVGR:-${gutter / 2}px`
+        : '--paddingVGR:0;--marginVGR:0';
     }
   }
 };
@@ -34,7 +34,7 @@ export default {
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  width: calc(100% + (var(--paddingSGR) * 2));
-  margin: var(--marginSGR);
+  width: calc(100% + (var(--paddingVGR) * 2));
+  margin: var(--marginVGR);
 }
 </style>

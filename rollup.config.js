@@ -7,6 +7,8 @@ import vue from 'rollup-plugin-vue';
 import replace from 'rollup-plugin-replace';
 import pkg from './package.json';
 
+const watch = process.env.ROLLUP_WATCH;
+
 const app = {
   input: 'docs/main.js',
   output: {
@@ -20,9 +22,9 @@ const app = {
     babel({ exclude: 'node_modules/**' }),
     resolve({ mainFields: ['module', 'jsnext', 'main', 'browser'] }),
     commonjs(),
-    serve(),
-    livereload('public'),
-    terser(),
+    watch && serve(),
+    watch && livereload('public'),
+    !watch && terser(),
     replace({
       'process.env.NODE_ENV': JSON.stringify('development'),
       'process.env.VUE_ENV': JSON.stringify('browser')
@@ -103,6 +105,6 @@ function serve() {
   };
 }
 
-const config = process.env.ROLLUP_WATCH ? app : library;
+const config = watch ? app : [...library, app];
 
 export default config;

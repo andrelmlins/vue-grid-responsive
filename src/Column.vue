@@ -11,9 +11,9 @@ export default {
     let styleGeneral = this.createStyleSize();
 
     if (this.xs || this.sm || this.md || this.lg || this.xl) {
-      styleGeneral += `--colFlexSGR:0;`;
+      styleGeneral += `--colFlexVGR:0;`;
     } else {
-      styleGeneral = `--colFlexSGR:1;`;
+      styleGeneral = `--colFlexVGR:1;`;
     }
 
     return {
@@ -51,12 +51,12 @@ export default {
       let newStyle = '';
 
       newStyle += this.xs
-        ? `--xsWidthSGR:${this.getValue(this.xs)}; `
-        : `--xsWidthSGR:100%; `;
-      newStyle += this.sm ? `--smWidthSGR:${this.getValue(this.sm)}; ` : '';
-      newStyle += this.md ? `--mdWidthSGR:${this.getValue(this.md)}; ` : '';
-      newStyle += this.lg ? `--lgWidthSGR:${this.getValue(this.lg)}; ` : '';
-      newStyle += this.xl ? `--xlWidthSGR:${this.getValue(this.xl)}; ` : '';
+        ? `--xsWidthVGR:${this.getValue(this.xs)}; `
+        : `--xsWidthVGR:100%; `;
+      newStyle += this.sm ? `--smWidthVGR:${this.getValue(this.sm)}; ` : '';
+      newStyle += this.md ? `--mdWidthVGR:${this.getValue(this.md)}; ` : '';
+      newStyle += this.lg ? `--lgWidthVGR:${this.getValue(this.lg)}; ` : '';
+      newStyle += this.xl ? `--xlWidthVGR:${this.getValue(this.xl)}; ` : '';
 
       return newStyle;
     }
@@ -69,45 +69,45 @@ export default {
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  width: calc(100% + (var(--paddingSGR) * 2));
-  margin: var(--marginSGR);
+  width: calc(100% + (var(--paddingVGR) * 2));
+  margin: var(--marginVGR);
 }
 
 .col {
   position: relative;
   box-sizing: border-box;
-  flex-grow: var(--colFlexSGR);
-  padding: var(--paddingSGR);
+  flex-grow: var(--colFlexVGR);
+  padding: var(--paddingVGR);
 }
 .col-xs {
-  flex-basis: var(--xsWidthSGR);
-  max-width: var(--xsWidthSGR);
+  flex-basis: var(--xsWidthVGR);
+  max-width: var(--xsWidthVGR);
 }
 
 @media (min-width: 576px) {
   .col-sm {
-    flex-basis: var(--smWidthSGR);
-    max-width: var(--smWidthSGR);
+    flex-basis: var(--smWidthVGR);
+    max-width: var(--smWidthVGR);
   }
 }
 
 @media (min-width: 768px) {
   .col-md {
-    flex-basis: var(--mdWidthSGR);
-    max-width: var(--mdWidthSGR);
+    flex-basis: var(--mdWidthVGR);
+    max-width: var(--mdWidthVGR);
   }
 }
 
 @media (min-width: 992px) {
   .col-lg {
-    flex-basis: var(--lgWidthSGR);
-    max-width: var(--lgWidthSGR);
+    flex-basis: var(--lgWidthVGR);
+    max-width: var(--lgWidthVGR);
   }
 }
 
 @media (min-width: 1200px) {
   .col-xl {
-    max-width: var(--xlWidthSGR);
+    max-width: var(--xlWidthVGR);
   }
 }
 </style>
