@@ -1,6 +1,6 @@
 {
   "name": "vue-grid-responsive",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Responsive grid system based on Bootstrap for Vue",
   "license": "MIT",
   "main": "dist/vue-grid-responsive.umd.js",
@@ -13,6 +13,10 @@
     "dev": "rollup -c -w",
     "start": "sirv public"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "bugs": {
     "url": "https://github.com/andrelmlins/vue-grid-responsive/issues"
   },
