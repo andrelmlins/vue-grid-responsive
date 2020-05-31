@@ -17,7 +17,7 @@ export default {
     }
 
     return {
-      classGeneral: `col ${this.createClassSize()}`,
+      classGeneral: `colVGR ${this.createClassSize()}`,
       styleGeneral
     };
   },
@@ -38,12 +38,12 @@ export default {
       return breakpoint ? `${(breakpoint / localColumns) * 100}%` : false;
     },
     createClassSize() {
-      let newClass = 'col-xs ';
+      let newClass = 'colVGR-xs ';
 
-      newClass += this.sm ? 'col-sm ' : '';
-      newClass += this.md ? 'col-md ' : '';
-      newClass += this.lg ? 'col-lg ' : '';
-      newClass += this.xl ? 'col-xl ' : '';
+      newClass += this.sm ? 'colVGR-sm ' : '';
+      newClass += this.md ? 'colVGR-md ' : '';
+      newClass += this.lg ? 'colVGR-lg ' : '';
+      newClass += this.xl ? 'colVGR-xl ' : '';
 
       return newClass;
     },
@@ -65,48 +65,40 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
-  width: calc(100% + (var(--paddingVGR) * 2));
-  margin: var(--marginVGR);
-}
-
-.col {
+.colVGR {
   position: relative;
   box-sizing: border-box;
   flex-grow: var(--colFlexVGR);
   padding: var(--paddingVGR);
 }
-.col-xs {
+.colVGR-xs {
   flex-basis: var(--xsWidthVGR);
   max-width: var(--xsWidthVGR);
 }
 
 @media (min-width: 576px) {
-  .col-sm {
+  .colVGR-sm {
     flex-basis: var(--smWidthVGR);
     max-width: var(--smWidthVGR);
   }
 }
 
 @media (min-width: 768px) {
-  .col-md {
+  .colVGR-md {
     flex-basis: var(--mdWidthVGR);
     max-width: var(--mdWidthVGR);
   }
 }
 
 @media (min-width: 992px) {
-  .col-lg {
+  .colVGR-lg {
     flex-basis: var(--lgWidthVGR);
     max-width: var(--lgWidthVGR);
   }
 }
 
 @media (min-width: 1200px) {
-  .col-xl {
+  .colVGR-xl {
     max-width: var(--xlWidthVGR);
   }
 }

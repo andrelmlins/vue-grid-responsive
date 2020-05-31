@@ -5,6 +5,8 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import vue from 'rollup-plugin-vue';
 import replace from 'rollup-plugin-replace';
+import css from 'rollup-plugin-css-only';
+import autoprefixer from 'autoprefixer';
 import pkg from './package.json';
 
 const watch = process.env.ROLLUP_WATCH;
@@ -18,7 +20,16 @@ const app = {
     file: 'public/build/bundle.js'
   },
   plugins: [
-    vue(),
+    vue({
+      css: false,
+      style: {
+        postcssPlugins: [autoprefixer]
+      }
+    }),
+    css({
+      entry: 'docs/main.js',
+      dest: 'public/build/bundle.css'
+    }),
     babel({ exclude: 'node_modules/**' }),
     resolve({ mainFields: ['module', 'jsnext', 'main', 'browser'] }),
     commonjs(),
