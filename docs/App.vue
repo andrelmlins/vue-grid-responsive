@@ -9,6 +9,39 @@
       <h1>Vue Grid Responsive</h1>
     </div>
     <br />
+
+    <h2>Setting columns count</h2>
+    <div class="card">
+      <row :gutter="12" :columns="10">
+        <column :xs="10" :md="5" :lg="2">
+          <div class="col">xs=10 md=5 lg=2</div>
+        </column>
+        <column :xs="10" :md="5" :lg="2">
+          <div class="col">xs=10 md=5 lg=2</div>
+        </column>
+        <column :xs="10" :md="5" :lg="2">
+          <div class="col">xs=10 md=5 lg=2</div>
+        </column>
+        <column :xs="10" :md="5" :lg="2">
+          <div class="col">xs=10 md=5 lg=2</div>
+        </column>
+        <column :xs="10" :md="5" :lg="2">
+          <div class="col">xs=10 md=5 lg=2</div>
+        </column>
+        <column :xs="10" :lg="3">
+          <div class="col">xs=10 lg=3</div>
+        </column>
+        <column :xs="10" :lg="4">
+          <div class="col">xs=10 lg=4</div>
+        </column>
+        <column :xs="10" :lg="3">
+          <div class="col">xs=10 lg=3</div>
+        </column>
+      </row>
+      <code-highlight>
+        {{ codeThird }}
+      </code-highlight>
+    </div>
     <h2>Without define sizes</h2>
     <div class="card">
       <div>
@@ -23,6 +56,7 @@
             <div class="col">col</div>
           </column>
         </row>
+        <br />
         <row :gutter="12">
           <column>
             <div class="col">col</div>
@@ -78,38 +112,6 @@
       </row>
       <code-highlight>
         {{ codeSecond }}
-      </code-highlight>
-    </div>
-    <h2>Setting columns count</h2>
-    <div class="card">
-      <row :gutter="12" :columns="10">
-        <column :xs="10" :md="5" :lg="2">
-          <div class="col">xs=10 md=5 lg=2</div>
-        </column>
-        <column :xs="10" :md="5" :lg="2">
-          <div class="col">xs=10 md=5 lg=2</div>
-        </column>
-        <column :xs="10" :md="5" :lg="2">
-          <div class="col">xs=10 md=5 lg=2</div>
-        </column>
-        <column :xs="10" :md="5" :lg="2">
-          <div class="col">xs=10 md=5 lg=2</div>
-        </column>
-        <column :xs="10" :md="5" :lg="2">
-          <div class="col">xs=10 md=5 lg=2</div>
-        </column>
-        <column :xs="10" :lg="3">
-          <div class="col">xs=10 lg=3</div>
-        </column>
-        <column :xs="10" :lg="4">
-          <div class="col">xs=10 lg=4</div>
-        </column>
-        <column :xs="10" :lg="3">
-          <div class="col">xs=10 lg=3</div>
-        </column>
-      </row>
-      <code-highlight>
-        {{ codeThird }}
       </code-highlight>
     </div>
     <h2>Changing gutter</h2>
