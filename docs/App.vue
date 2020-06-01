@@ -9,214 +9,31 @@
       <h1>Vue Grid Responsive</h1>
     </div>
     <br />
-
-    <h2>Setting columns count</h2>
-    <div class="card">
-      <row :gutter="12" :columns="10">
-        <column :xs="10" :md="5" :lg="2">
-          <div class="col">xs=10 md=5 lg=2</div>
-        </column>
-        <column :xs="10" :md="5" :lg="2">
-          <div class="col">xs=10 md=5 lg=2</div>
-        </column>
-        <column :xs="10" :md="5" :lg="2">
-          <div class="col">xs=10 md=5 lg=2</div>
-        </column>
-        <column :xs="10" :md="5" :lg="2">
-          <div class="col">xs=10 md=5 lg=2</div>
-        </column>
-        <column :xs="10" :md="5" :lg="2">
-          <div class="col">xs=10 md=5 lg=2</div>
-        </column>
-        <column :xs="10" :lg="3">
-          <div class="col">xs=10 lg=3</div>
-        </column>
-        <column :xs="10" :lg="4">
-          <div class="col">xs=10 lg=4</div>
-        </column>
-        <column :xs="10" :lg="3">
-          <div class="col">xs=10 lg=3</div>
-        </column>
-      </row>
-      <code-highlight>
-        {{ codeThird }}
-      </code-highlight>
-    </div>
-    <h2>Without define sizes</h2>
-    <div class="card">
-      <div>
-        <row :gutter="12">
-          <column>
-            <div class="col">col</div>
-          </column>
-          <column>
-            <div class="col">col</div>
-          </column>
-          <column>
-            <div class="col">col</div>
-          </column>
-        </row>
-        <br />
-        <row :gutter="12">
-          <column>
-            <div class="col">col</div>
-          </column>
-          <column>
-            <div class="col">col</div>
-          </column>
-          <column>
-            <div class="col">col</div>
-          </column>
-          <column>
-            <div class="col">col</div>
-          </column>
-          <column>
-            <div class="col">col</div>
-          </column>
-        </row>
-      </div>
-      <code-highlight>
-        {{ codeFirst }}
-      </code-highlight>
-    </div>
-    <h2>Specifying sizes</h2>
-    <div class="card">
-      <row :gutter="12">
-        <column :xs="12" :md="4" :lg="3">
-          <div class="col">xs=12 md=4 lg=3</div>
-        </column>
-        <column :xs="12" :md="4" :lg="3">
-          <div class="col">xs=12 md=4 lg=3</div>
-        </column>
-        <column :xs="12" :md="4" :lg="3">
-          <div class="col">xs=12 md=4 lg=3</div>
-        </column>
-        <column :xs="12" :md="4" :lg="3">
-          <div class="col">xs=12 md=4 lg=3</div>
-        </column>
-        <column :xs="12" :lg="6">
-          <div class="col">xs=12 lg=6</div>
-        </column>
-        <column :xs="12" :lg="6">
-          <div class="col">xs=12 lg=6</div>
-        </column>
-        <column :lg="4">
-          <div class="col">lg=4</div>
-        </column>
-        <column :lg="4">
-          <div class="col">lg=4</div>
-        </column>
-        <column :lg="4">
-          <div class="col">lg=4</div>
-        </column>
-      </row>
-      <code-highlight>
-        {{ codeSecond }}
-      </code-highlight>
-    </div>
-    <h2>Changing gutter</h2>
-    <div class="card">
-      <row :gutter="50">
-        <column :xs="12" :md="4" :lg="3">
-          <div class="col">xs=12 md=4 lg=3</div>
-        </column>
-        <column :xs="12" :md="4" :lg="3">
-          <div class="col">xs=12 md=4 lg=3</div>
-        </column>
-        <column :xs="12" :md="4" :lg="3">
-          <div class="col">xs=12 md=4 lg=3</div>
-        </column>
-        <column :xs="12" :md="4" :lg="3">
-          <div class="col">xs=12 md=4 lg=3</div>
-        </column>
-      </row>
-      <code-highlight>
-        {{ codeFourth }}
-      </code-highlight>
-    </div>
+    <SpecifyingSizes />
+    <WithoutSizes />
+    <SettingColumnsCount />
+    <ChangingGutter />
   </main>
 </template>
 
 <script>
+import SpecifyingSizes from './examples/SpecifyingSizes.vue';
+import WithoutSizes from './examples/WithoutSizes.vue';
+import SettingColumnsCount from './examples/SettingColumnsCount.vue';
+import ChangingGutter from './examples/ChangingGutter.vue';
+
 export default {
-  data() {
-    return {
-      codeFirst: `
-    <row :gutter="12">
-      <column>
-        <div class="col">col</div>
-      </column>
-      <column>
-        <div class="col">col</div>
-      </column>
-      <column>
-        <div class="col">col</div>
-      </column>
-    </row>
-      `,
-      codeSecond: `
-    <row :gutter="12">
-      <column :xs="12" :md="4" :lg="3">
-        <div class="col">xs=12 md=4 lg=3</div>
-      </column>
-      <column :xs="12" :md="4" :lg="3">
-        <div class="col">xs=12 md=4 lg=3</div>
-      </column>
-      <column :xs="12" :md="4" :lg="3">
-        <div class="col">xs=12 md=4 lg=3</div>
-      </column>
-      <column :xs="12" :md="4" :lg="3">
-        <div class="col">xs=12 md=4 lg=3</div>
-      </column>
-      <column :xs="12" :lg="6">
-        <div class="col">xs=12 lg=6</div>
-      </column>
-      <column :xs="12" :lg="6">
-        <div class="col">xs=12 lg=6</div>
-      </column>
-    </row>
-      `,
-      codeThird: `
-    <row :gutter="12" :columns="10">
-      <column :xs="10" :md="5" :lg="2">
-        <div class="col">xs=10 md=5 lg=2</div>
-      </column>
-      <column :xs="10" :md="5" :lg="2">
-        <div class="col">xs=10 md=5 lg=2</div>
-      </column>
-      <column :xs="10" :md="5" :lg="2">
-        <div class="col">xs=10 md=5 lg=2</div>
-      </column>
-      <column :xs="10" :md="5" :lg="2">
-        <div class="col">xs=10 md=5 lg=2</div>
-      </column>
-      <column :xs="10" :md="5" :lg="2">
-        <div class="col">xs=10 md=5 lg=2</div>
-      </column>
-    </row>
-      `,
-      codeFourth: `
-    <row :gutter="50">
-      <column :xs="12" :md="4" :lg="3">
-        <div class="col">xs=12 md=4 lg=3</div>
-      </column>
-      <column :xs="12" :md="4" :lg="3">
-        <div class="col">xs=12 md=4 lg=3</div>
-      </column>
-      <column :xs="12" :md="4" :lg="3">
-        <div class="col">xs=12 md=4 lg=3</div>
-      </column>
-      <column :xs="12" :md="4" :lg="3">
-        <div class="col">xs=12 md=4 lg=3</div>
-      </column>
-    </row>
-      `
-    };
+  name: 'App',
+  components: {
+    SpecifyingSizes,
+    WithoutSizes,
+    SettingColumnsCount,
+    ChangingGutter
   }
 };
 </script>
 
-<style scoped>
+<style>
 main {
   padding: 20px 38px;
   box-sizing: border-box;
