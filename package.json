@@ -6,6 +6,7 @@
   "main": "dist/vue-grid-responsive.umd.js",
   "module": "dist/vue-grid-responsive.esm.js",
   "unpkg": "dist/vue-grid-responsive.min.js",
+  "homepage": "https://vue-grid-responsive.netlify.com/",
   "repository": "https://github.com/andrelmlins/vue-grid-responsive",
   "author": "André Lins <andrelucas01@hotmail.com> (https://andrelmlins.github.io/)",
   "scripts": {
