@@ -53,20 +53,38 @@ An example of how to use the library:
 
 ```vue
 <template>
-  <row container gutter="{12}">
-    <column xs="{12}" md="{4}" lg="{3}">
+  <row container :gutter="12">
+    <column :xs="12" :md="{4}" :lg="3">
       xs=12 md=4 lg=3
     </column>
-    <column xs="{12}" md="{4}" lg="{3}">
+    <column :xs="12" :md="4" :lg="3">
       xs=12 md=4 lg=3
     </column>
-    <column xs="{12}" md="{4}" lg="{3}">
+    <column :xs="12" :md="4" :lg="3">
       xs=12 md=4 lg=3
     </column>
-    <column xs="{12}" md="{4}" lg="{3}">
+    <column :xs="{12}" :md="4" :lg="3">
       xs=12 md=4 lg=3
     </column>
   </row>
+</template>
+```
+
+Using then hidden component:
+
+```vue
+<template>
+  <div>
+    <hidden :xs="true">
+      hidden xs
+    </hidden>
+    <hidden :md="true">
+      hidden md
+    </hidden>
+    <hidden :xl="true">
+      hidden xl
+    </hidden>
+  </div>
 </template>
 ```
 
@@ -100,6 +118,16 @@ Component props:
 | md   | -       | number | Size in medium screen      |
 | lg   | -       | number | Size in large screen       |
 | xl   | -       | number | Size in extra large screen |
+
+### Hidden Component props
+
+| Prop | Default | Type    | Description                |
+| ---- | ------- | ------- | -------------------------- |
+| xs   | -       | boolean | Hidden in extra small size |
+| sm   | -       | boolean | Hidden in small size       |
+| md   | -       | boolean | Hidden in medium size      |
+| lg   | -       | boolean | Hidden in large size       |
+| xl   | -       | boolean | Hidden in extra large size |
 
 ## NPM Statistics
 
