@@ -1,11 +1,7 @@
 <template>
   <main>
     <div class="title">
-      <img
-        alt="Vue Framework"
-        src="https://vuejs.org/images/logo.png"
-        width="200"
-      />
+      <img alt="Vue Framework" src="https://vuejs.org/images/logo.png" width="200" />
       <h1>Vue Grid Responsive</h1>
     </div>
     <br />
