@@ -54,23 +54,23 @@ An example of how to use the library:
 ```vue
 <template>
   <row container :gutter="12">
-    <column :xs="12" :md="{4}" :lg="3">
-      xs=12 md=4 lg=3
-    </column>
     <column :xs="12" :md="4" :lg="3">
       xs=12 md=4 lg=3
     </column>
     <column :xs="12" :md="4" :lg="3">
       xs=12 md=4 lg=3
     </column>
-    <column :xs="{12}" :md="4" :lg="3">
+    <column :xs="12" :md="4" :lg="3">
+      xs=12 md=4 lg=3
+    </column>
+    <column :xs="12" :md="4" :lg="3">
       xs=12 md=4 lg=3
     </column>
   </row>
 </template>
 ```
 
-Using then hidden component:
+Using the hidden component:
 
 ```vue
 <template>
