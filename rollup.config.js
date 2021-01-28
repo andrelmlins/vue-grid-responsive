@@ -6,7 +6,7 @@ import { terser } from 'rollup-plugin-terser';
 import vue from 'rollup-plugin-vue';
 import replace from 'rollup-plugin-replace';
 import css from 'rollup-plugin-css-only';
-import autoprefixer from 'autoprefixer';
+import postcss from 'rollup-plugin-postcss';
 import pkg from './package.json';
 
 const watch = process.env.ROLLUP_WATCH;
@@ -17,18 +17,13 @@ const app = {
     sourcemap: true,
     format: 'iife',
     name: 'app',
-    file: 'public/build/bundle.js'
+    file: 'public/build/bundle.js',
   },
   plugins: [
-    vue({
-      css: false,
-      style: {
-        postcssPlugins: [autoprefixer]
-      }
-    }),
+    vue(),
     css({
       entry: 'docs/main.js',
-      dest: 'public/build/bundle.css'
+      dest: 'public/build/bundle.css',
     }),
     babel({ exclude: 'node_modules/**' }),
     resolve({ mainFields: ['module', 'jsnext', 'main', 'browser'] }),
@@ -38,65 +33,67 @@ const app = {
     !watch && terser(),
     replace({
       'process.env.NODE_ENV': JSON.stringify('development'),
-      'process.env.VUE_ENV': JSON.stringify('browser')
-    })
+      'process.env.VUE_ENV': JSON.stringify('browser'),
+    }),
   ],
   watch: {
-    clearScreen: false
-  }
+    clearScreen: false,
+  },
 };
 
 const library = [
   {
     input: 'src/index.js',
     plugins: [
-      vue(),
+      vue({ preprocessStyles: true }),
+      postcss(),
       babel({ exclude: 'node_modules/**' }),
       resolve({ mainFields: ['module', 'jsnext', 'main', 'browser'] }),
-      commonjs()
+      commonjs(),
     ],
     output: {
       exports: 'named',
       name: 'VueGridResponsive',
       file: pkg.unpkg,
       format: 'iife',
-      sourcemap: true
+      sourcemap: true,
     },
     watch: {
-      include: 'src/**'
-    }
+      include: 'src/**',
+    },
   },
   {
     input: './src/index.js',
     plugins: [
-      vue(),
+      vue({ preprocessStyles: true }),
+      postcss(),
       babel({ exclude: 'node_modules/**' }),
-      resolve({ mainFields: ['module', 'jsnext', 'main', 'browser'] }),
-      commonjs()
+      commonjs(),
     ],
     output: {
       name: 'VueGridResponsive',
       file: pkg.module,
       format: 'es',
-      sourcemap: true
-    }
+      sourcemap: true,
+    },
   },
   {
     input: './src/index.js',
     plugins: [
-      vue(),
+      vue({ preprocessStyles: true }),
+      postcss(),
       babel({ exclude: 'node_modules/**' }),
       resolve({ mainFields: ['module', 'jsnext', 'main', 'browser'] }),
-      commonjs()
+      commonjs(),
     ],
     output: {
       exports: 'named',
       name: 'VueGridResponsive',
       file: pkg.main,
       format: 'umd',
-      sourcemap: true
-    }
-  }
+      sourcemap: true,
+    },
+  },
 ];
 
 function serve() {
@@ -109,10 +106,10 @@ function serve() {
 
         require('child_process').spawn('npm', ['run', 'start', '--', '--dev'], {
           stdio: ['ignore', 'inherit', 'inherit'],
-          shell: true
+          shell: true,
         });
       }
-    }
+    },
   };
 }
 

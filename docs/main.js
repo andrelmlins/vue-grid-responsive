@@ -1,16 +1,17 @@
-import 'vue-code-highlight/themes/duotone-sea.css';
+// import 'vue-code-highlight/themes/duotone-sea.css';
 
-import Vue from 'vue';
-import { component as VueCodeHighlight } from 'vue-code-highlight';
+import { createApp } from 'vue';
+// import { component as VueCodeHighlight } from 'vue-code-highlight';
 import { Row, Column, Hidden } from '../src';
 import App from './App.vue';
 
-Vue.component('row', Row);
-Vue.component('column', Column);
-Vue.component('hidden', Hidden);
-Vue.component('code-highlight', VueCodeHighlight);
+// Vue.component('code-highlight', VueCodeHighlight);
 
-new Vue({
-  el: '#app',
-  render: h => h(App)
-});
+const app = createApp(App);
+
+app.component('row', Row);
+app.component('column', Column);
+app.component('hidden', Hidden);
+// app.component('code-highlight', VueCodeHighlight);
+
+app.mount('#app');
