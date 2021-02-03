@@ -17,16 +17,34 @@ Responsive grid system based on Bootstrap for Vue.
 
 ### NPM
 
+**vue 2.0**
+
 ```
 npm i vue-grid-responsive
 // OR
 yarn add vue-grid-responsive
 ```
 
+**vue 3.0**
+
+```
+npm i vue-grid-responsive@next
+// OR
+yarn add vue-grid-responsive@next
+```
+
 ### CDN
+
+**vue 2.0**
 
 ```html
 <script src="https://unpkg.com/vue-grid-responsive"></script>
+```
+
+**vue 3.0**
+
+```html
+<script src="https://unpkg.com/vue-grid-responsive@next"></script>
 ```
 
 ### Manual
@@ -39,12 +57,28 @@ You can also download and import it manually
 
 ## Module import
 
+**vue 2.0**
+
 ```js
 import Vue from 'vue';
-import { Row, Column } from 'vue-grid-responsive';
+import { Row, Column, Hidden } from 'vue-grid-responsive';
 
 Vue.component('row', Row);
 Vue.component('column', Column);
+Vue.component('hidden', Hidden);
+```
+
+**vue 3.0**
+
+```js
+import { createApp } from 'vue';
+import { Row, Column, Hidden } from 'vue-grid-responsive';
+
+const app = createApp(App);
+
+app.component('row', Row);
+app.component('column', Column);
+app.component('hidden', Hidden);
 ```
 
 ## Examples
