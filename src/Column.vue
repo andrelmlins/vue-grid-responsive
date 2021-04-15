@@ -99,6 +99,7 @@ export default {
 
 @media (min-width: 1200px) {
   .colVGR-xl {
+    flex-basis: var(--xlWidthVGR);
     max-width: var(--xlWidthVGR);
   }
 }
