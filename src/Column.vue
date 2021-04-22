@@ -15,24 +15,24 @@ export default {
     xl: Number,
     xsOffset: {
       required: false,
-      type: Number,
+      type: Number
     },
     smOffset: {
       required: false,
-      type: Number,
+      type: Number
     },
     mdOffset: {
       required: false,
-      type: Number,
+      type: Number
     },
     lgOffset: {
       required: false,
-      type: Number,
+      type: Number
     },
     xlOffset: {
       required: false,
-      type: Number,
-    },
+      type: Number
+    }
   },
   data() {
     let styleGeneral = this.createStyleSize();
@@ -45,7 +45,7 @@ export default {
 
     return {
       classGeneral: `colVGR ${this.createClassSize()}`,
-      styleGeneral,
+      styleGeneral
     };
   },
   methods: {
@@ -103,8 +103,8 @@ export default {
         : '';
 
       return newStyle;
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -144,7 +144,7 @@ export default {
   }
 }
 
-@media (min-width: 940px) {
+@media (min-width: 992px) {
   .colVGR-lg {
     flex-basis: var(--lgWidthVGR);
     max-width: var(--lgWidthVGR);
