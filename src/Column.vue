@@ -7,6 +7,18 @@
 <script>
 export default {
   name: 'Col',
+  props: {
+    xs: Number,
+    sm: Number,
+    md: Number,
+    lg: Number,
+    xl: Number,
+    xsOffset: Number,
+    smOffset: Number,
+    mdOffset: Number,
+    lgOffset: Number,
+    xlOffset: Number,
+  },
   data() {
     let styleGeneral = this.createStyleSize();
 
@@ -18,15 +30,8 @@ export default {
 
     return {
       classGeneral: `colVGR ${this.createClassSize()}`,
-      styleGeneral
+      styleGeneral,
     };
-  },
-  props: {
-    xs: Number,
-    sm: Number,
-    md: Number,
-    lg: Number,
-    xl: Number
   },
   methods: {
     getValue(breakpoint) {
@@ -38,18 +43,25 @@ export default {
       return breakpoint ? `${(breakpoint / localColumns) * 100}%` : false;
     },
     createClassSize() {
-      let newClass = 'colVGR-xs ';
+      let newClass = 'grid-column colVGR-xs ';
 
       newClass += this.sm ? 'colVGR-sm ' : '';
       newClass += this.md ? 'colVGR-md ' : '';
       newClass += this.lg ? 'colVGR-lg ' : '';
       newClass += this.xl ? 'colVGR-xl ' : '';
 
+      newClass += this.xsOffset ? 'colOffset-xs ' : '';
+      newClass += this.smOffset ? 'colOffset-sm ' : '';
+      newClass += this.mdOffset ? 'colOffset-md ' : '';
+      newClass += this.lgOffset ? 'colOffset-lg ' : '';
+      newClass += this.xlOffset ? 'colOffset-xl ' : '';
+
       return newClass;
     },
     createStyleSize() {
       let newStyle = '';
 
+      // Scale
       newStyle += this.xs
         ? `--xsWidthVGR:${this.getValue(this.xs)}; `
         : `--xsWidthVGR:100%; `;
@@ -58,9 +70,26 @@ export default {
       newStyle += this.lg ? `--lgWidthVGR:${this.getValue(this.lg)}; ` : '';
       newStyle += this.xl ? `--xlWidthVGR:${this.getValue(this.xl)}; ` : '';
 
+      // Offset
+      newStyle += this.xsOffset
+        ? `--xsOffset:${this.getValue(this.xsOffset)}; `
+        : ``;
+      newStyle += this.smOffset
+        ? `--smOffset:${this.getValue(this.smOffset)}; `
+        : '';
+      newStyle += this.mdOffset
+        ? `--mdOffset:${this.getValue(this.mdOffset)}; `
+        : '';
+      newStyle += this.lgOffset
+        ? `--lgOffset:${this.getValue(this.lgOffset)}; `
+        : '';
+      newStyle += this.xlOffset
+        ? `--xlOffset:${this.getValue(this.xlOffset)}; `
+        : '';
+
       return newStyle;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -76,10 +105,17 @@ export default {
   max-width: var(--xsWidthVGR);
 }
 
+.colOffset-xs {
+  margin-left: var(--xsOffset);
+}
+
 @media (min-width: 576px) {
   .colVGR-sm {
     flex-basis: var(--smWidthVGR);
     max-width: var(--smWidthVGR);
+  }
+  .colOffset-sm {
+    margin-left: var(--smOffset);
   }
 }
 
@@ -88,12 +124,18 @@ export default {
     flex-basis: var(--mdWidthVGR);
     max-width: var(--mdWidthVGR);
   }
+  .colOffset-md {
+    margin-left: var(--mdOffset);
+  }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 940px) {
   .colVGR-lg {
     flex-basis: var(--lgWidthVGR);
     max-width: var(--lgWidthVGR);
+  }
+  .colOffset-lg {
+    margin-left: var(--lgOffset);
   }
 }
 
@@ -101,6 +143,9 @@ export default {
   .colVGR-xl {
     flex-basis: var(--xlWidthVGR);
     max-width: var(--xlWidthVGR);
+  }
+  .colOffset-xl {
+    margin-left: var(--xlOffset);
   }
 }
 </style>
