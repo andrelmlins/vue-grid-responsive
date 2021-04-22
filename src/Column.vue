@@ -13,11 +13,26 @@ export default {
     md: Number,
     lg: Number,
     xl: Number,
-    xsOffset: Number,
-    smOffset: Number,
-    mdOffset: Number,
-    lgOffset: Number,
-    xlOffset: Number,
+    xsOffset: {
+      required: false,
+      type: Number,
+    },
+    smOffset: {
+      required: false,
+      type: Number,
+    },
+    mdOffset: {
+      required: false,
+      type: Number,
+    },
+    lgOffset: {
+      required: false,
+      type: Number,
+    },
+    xlOffset: {
+      required: false,
+      type: Number,
+    },
   },
   data() {
     let styleGeneral = this.createStyleSize();
