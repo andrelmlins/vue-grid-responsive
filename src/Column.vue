@@ -65,11 +65,11 @@ export default {
       newClass += this.lg ? 'colVGR-lg ' : '';
       newClass += this.xl ? 'colVGR-xl ' : '';
 
-      newClass += this.xsOffset ? 'colOffset-xs ' : '';
-      newClass += this.smOffset ? 'colOffset-sm ' : '';
-      newClass += this.mdOffset ? 'colOffset-md ' : '';
-      newClass += this.lgOffset ? 'colOffset-lg ' : '';
-      newClass += this.xlOffset ? 'colOffset-xl ' : '';
+      newClass += this.xsOffset ? 'colVGR-Offset-xs ' : '';
+      newClass += this.smOffset ? 'colVGR-Offset-sm ' : '';
+      newClass += this.mdOffset ? 'colVGR-Offset-md ' : '';
+      newClass += this.lgOffset ? 'colVGR-Offset-lg ' : '';
+      newClass += this.xlOffset ? 'colVGR-Offset-xl ' : '';
 
       return newClass;
     },
@@ -120,7 +120,7 @@ export default {
   max-width: var(--xsWidthVGR);
 }
 
-.colOffset-xs {
+.colVGR-Offset-xs {
   margin-left: var(--xsOffset);
 }
 
@@ -129,7 +129,7 @@ export default {
     flex-basis: var(--smWidthVGR);
     max-width: var(--smWidthVGR);
   }
-  .colOffset-sm {
+  .colVGR-Offset-sm {
     margin-left: var(--smOffset);
   }
 }
@@ -139,7 +139,7 @@ export default {
     flex-basis: var(--mdWidthVGR);
     max-width: var(--mdWidthVGR);
   }
-  .colOffset-md {
+  .colVGR-Offset-md {
     margin-left: var(--mdOffset);
   }
 }
@@ -149,7 +149,7 @@ export default {
     flex-basis: var(--lgWidthVGR);
     max-width: var(--lgWidthVGR);
   }
-  .colOffset-lg {
+  .colVGR-Offset-lg {
     margin-left: var(--lgOffset);
   }
 }
@@ -159,7 +159,7 @@ export default {
     flex-basis: var(--xlWidthVGR);
     max-width: var(--xlWidthVGR);
   }
-  .colOffset-xl {
+  .colVGR-Offset-xl {
     margin-left: var(--xlOffset);
   }
 }
