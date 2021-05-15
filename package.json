@@ -1,6 +1,6 @@
 {
   "name": "vue-grid-responsive",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Responsive grid system based on Bootstrap for Vue",
   "license": "MIT",
   "main": "dist/vue-grid-responsive.umd.js",
