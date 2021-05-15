@@ -88,18 +88,20 @@ An example of how to use the library:
 ```vue
 <template>
   <row container :gutter="12">
-    <column :xs="12" :md="4" :lg="3">
-      xs=12 md=4 lg=3
-    </column>
-    <column :xs="12" :md="4" :lg="3">
-      xs=12 md=4 lg=3
-    </column>
-    <column :xs="12" :md="4" :lg="3">
-      xs=12 md=4 lg=3
-    </column>
-    <column :xs="12" :md="4" :lg="3">
-      xs=12 md=4 lg=3
-    </column>
+    <column :xs="12" :md="4" :lg="3"> xs=12 md=4 lg=3 </column>
+    <column :xs="12" :md="4" :lg="3"> xs=12 md=4 lg=3 </column>
+    <column :xs="12" :md="4" :lg="3"> xs=12 md=4 lg=3 </column>
+    <column :xs="12" :md="4" :lg="3"> xs=12 md=4 lg=3 </column>
+  </row>
+</template>
+```
+
+An example how to use offset in addition with a columns:
+
+```vue
+<template>
+  <row container :gutter="12">
+    <column :md="8" :mdOffset="2" :lg="6" :lgOffset="3"> </column>
   </row>
 </template>
 ```
@@ -109,15 +111,9 @@ Using the hidden component:
 ```vue
 <template>
   <div>
-    <hidden :xs="true">
-      hidden xs
-    </hidden>
-    <hidden :md="true">
-      hidden md
-    </hidden>
-    <hidden :xl="true">
-      hidden xl
-    </hidden>
+    <hidden :xs="true"> hidden xs </hidden>
+    <hidden :md="true"> hidden md </hidden>
+    <hidden :xl="true"> hidden xl </hidden>
   </div>
 </template>
 ```
@@ -145,6 +141,8 @@ Component props:
 
 ### Column Component props
 
+#### Basic Size
+
 | Prop | Default | Type   | Description                |
 | ---- | ------- | ------ | -------------------------- |
 | xs   | -       | number | Size in extra small screen |
@@ -152,6 +150,16 @@ Component props:
 | md   | -       | number | Size in medium screen      |
 | lg   | -       | number | Size in large screen       |
 | xl   | -       | number | Size in extra large screen |
+
+#### Offset
+
+| Prop     | Default | Type   | Description                  |
+| -------- | ------- | ------ | ---------------------------- |
+| xsOffset | -       | number | Offset in extra small screen |
+| smOffset | -       | number | Offset in small screen       |
+| mdOffset | -       | number | Offset in medium screen      |
+| lgOffset | -       | number | Offset in large screen       |
+| xlOffset | -       | number | Offset in extra large screen |
 
 ### Hidden Component props
 

@@ -1,5 +1,5 @@
 <template>
-  <div :style="styleGeneral" class="container">
+  <div :style="styleGeneral" class="grid-row">
     <slot />
   </div>
 </template>
@@ -7,17 +7,17 @@
 <script>
 export default {
   name: 'Row',
-  data() {
-    return {
-      styleGeneral: this.createGutter(this.gutter)
-    };
-  },
   props: {
     gutter: Number,
     columns: {
       type: Number,
       default: 12
     }
+  },
+  data() {
+    return {
+      styleGeneral: this.createGutter(this.gutter)
+    };
   },
   methods: {
     createGutter(gutter) {
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.grid-row {
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
