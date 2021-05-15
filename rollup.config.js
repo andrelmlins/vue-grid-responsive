@@ -21,10 +21,7 @@ const app = {
   },
   plugins: [
     vue(),
-    css({
-      entry: 'docs/main.js',
-      dest: 'public/build/bundle.css',
-    }),
+    css({ entry: 'docs/main.js', output: 'bundle.css' }),
     babel({ exclude: 'node_modules/**' }),
     resolve({ mainFields: ['module', 'jsnext', 'main', 'browser'] }),
     commonjs(),
