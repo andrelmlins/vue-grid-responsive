@@ -31,10 +31,10 @@
           <div class="col">lg=4</div>
         </column>
       </row>
-      <code-highlight>
-        {{ example }}
-      </code-highlight>
     </div>
+    <code-highlight>
+      {{ example }}
+    </code-highlight>
   </div>
 </template>
 
@@ -43,8 +43,7 @@ export default {
   name: 'SpecifyingSizes',
   data() {
     return {
-      example: `
-    <template>
+      example: `<template>
       <row :gutter="12">
         <column :xs="12" :md="4" :lg="3">xs=12 md=4 lg=3</column>
         <column :xs="12" :md="4" :lg="3">xs=12 md=4 lg=3</column>
@@ -56,8 +55,7 @@ export default {
         <column :lg="4">lg=4</column>
         <column :lg="4">lg=4</column>
       </row>
-    </template>
-      `
+    </template>`
     };
   }
 };

@@ -10,11 +10,6 @@ body {
   background-color: #e8f5e9;
 }
 
-pre {
-  padding: 0 !important;
-  margin-top: 30px !important;
-}
-
 .github-corner:hover .octo-arm {
   animation: octocat-wave 560ms ease-in-out;
 }

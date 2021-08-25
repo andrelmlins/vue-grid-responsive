@@ -28,10 +28,10 @@
           <div class="col">xs=10 lg=3</div>
         </column>
       </row>
-      <code-highlight>
-        {{ example }}
-      </code-highlight>
     </div>
+    <code-highlight>
+      {{ example }}
+    </code-highlight>
   </div>
 </template>
 
@@ -40,8 +40,7 @@ export default {
   name: 'SettingColumnsCount',
   data() {
     return {
-      example: `
-    <template>
+      example: `<template>
       <row :gutter="12" :columns="10">
         <column :xs="10" :md="5" :lg="2">xs=10 md=5 lg=2</column>
         <column :xs="10" :md="5" :lg="2">xs=10 md=5 lg=2</column>
@@ -52,8 +51,7 @@ export default {
         <column :xs="10" :lg="3">xs=10 lg=3</column>
         <column :xs="10" :lg="3">xs=10 lg=3</column>
       </row>
-    </template>
-      `
+    </template>`
     };
   }
 };

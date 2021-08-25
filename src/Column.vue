@@ -32,6 +32,10 @@ export default {
     xlOffset: {
       required: false,
       type: Number
+    },
+    order: {
+      required: false,
+      type: Number
     }
   },
   data() {
@@ -41,6 +45,10 @@ export default {
       styleGeneral += `--colFlexVGR:0;`;
     } else {
       styleGeneral = `--colFlexVGR:1;`;
+    }
+
+    if (this.order || this.order === 0) {
+      styleGeneral += `--orderSGR:${this.order};`;
     }
 
     return {
@@ -114,6 +122,7 @@ export default {
   box-sizing: border-box;
   flex-grow: var(--colFlexVGR);
   padding: var(--paddingVGR);
+  order: var(--orderSGR);
 }
 .colVGR-xs {
   flex-basis: var(--xsWidthVGR);
