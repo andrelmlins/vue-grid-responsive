@@ -33,10 +33,10 @@
           </column>
         </row>
       </div>
-      <code-highlight>
-        {{ example }}
-      </code-highlight>
     </div>
+    <code-highlight>
+      {{ example }}
+    </code-highlight>
   </div>
 </template>
 
@@ -45,14 +45,12 @@ export default {
   name: 'WithoutSizes',
   data() {
     return {
-      example: `
-    <template>
+      example: `<template>
       <row :gutter="12">
         <column>col</column>
         <column>col</column>
         <column>col</column>
       </row>
-      
       <row :gutter="12">
         <column>col</column>
         <column>col</column>
@@ -60,8 +58,7 @@ export default {
         <column>col</column>
         <column>col</column>
       </row>
-    </template>
-      `
+    </template>`
     };
   }
 };

@@ -143,13 +143,14 @@ Component props:
 
 #### Basic Size
 
-| Prop | Default | Type   | Description                |
-| ---- | ------- | ------ | -------------------------- |
-| xs   | -       | number | Size in extra small screen |
-| sm   | -       | number | Size in small screen       |
-| md   | -       | number | Size in medium screen      |
-| lg   | -       | number | Size in large screen       |
-| xl   | -       | number | Size in extra large screen |
+| Prop  | Default | Type   | Description                |
+| ----- | ------- | ------ | -------------------------- |
+| xs    | -       | number | Size in extra small screen |
+| sm    | -       | number | Size in small screen       |
+| md    | -       | number | Size in medium screen      |
+| lg    | -       | number | Size in large screen       |
+| xl    | -       | number | Size in extra large screen |
+| order | -       | number | Order the columns          |
 
 #### Offset
 

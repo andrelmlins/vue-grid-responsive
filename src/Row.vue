@@ -11,21 +11,21 @@ export default {
     gutter: Number,
     columns: {
       type: Number,
-      default: 12
-    }
+      default: 12,
+    },
   },
   data() {
     return {
-      styleGeneral: this.createGutter(this.gutter)
+      styleGeneral: this.createGutter(this.gutter),
     };
   },
   methods: {
     createGutter(gutter) {
       return gutter
         ? `--paddingVGR:${gutter / 2}px;--marginVGR:-${gutter / 2}px`
-        : '--paddingVGR:0;--marginVGR:0';
-    }
-  }
+        : '--paddingVGR:0px;--marginVGR:0px';
+    },
+  },
 };
 </script>
 
