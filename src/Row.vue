@@ -14,17 +14,12 @@ export default {
       default: 12,
     },
   },
-  data() {
-    return {
-      styleGeneral: this.createGutter(this.gutter),
-    };
-  },
-  methods: {
-    createGutter(gutter) {
-      return gutter
-        ? `--paddingVGR:${gutter / 2}px;--marginVGR:-${gutter / 2}px`
-        : '--paddingVGR:0px;--marginVGR:0px';
-    },
+  computed: {
+    styleGeneral() {
+      return this.gutter
+          ? `--paddingVGR:${this.gutter / 2}px;--marginVGR:-${this.gutter / 2}px`
+          : '--paddingVGR:0px;--marginVGR:0px';
+    }
   },
 };
 </script>
