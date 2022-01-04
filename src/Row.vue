@@ -1,5 +1,5 @@
 <template>
-  <div :style="styleGeneral" class="grid-row">
+  <div :style="styleGeneral" :class="classGeneral">
     <slot />
   </div>
 </template>
@@ -8,19 +8,24 @@
 export default {
   name: 'Row',
   props: {
-    gutter: Number,
+    gutter: {
+      Number,
+      default: 0
+    },
     columns: {
       type: Number,
-      default: 12,
-    },
+      default: 12
+    }
   },
   computed: {
     styleGeneral() {
-      return this.gutter
-          ? `--paddingVGR:${this.gutter / 2}px;--marginVGR:-${this.gutter / 2}px`
-          : '--paddingVGR:0px;--marginVGR:0px';
+      return `--paddingVGR:${this.gutter / 2}px;--marginVGR:-${this.gutter /
+        2}px;${this.$props.style || ''}`;
+    },
+    classGeneral() {
+      return `grid-row ${this.$props.class || ''}`;
     }
-  },
+  }
 };
 </script>
 

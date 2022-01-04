@@ -65,6 +65,7 @@ h1 {
   border-radius: 4px 4px 0px 0px;
   background-color: white;
   padding: 24px;
+  overflow: hidden;
 }
 main pre[class*='language-'] {
   margin: 0;

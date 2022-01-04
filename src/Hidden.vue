@@ -1,5 +1,5 @@
 <template>
-  <div :class="classGeneral">
+  <div :class="classGeneral" :style="styleGeneral">
     <slot />
   </div>
 </template>
@@ -7,11 +7,6 @@
 <script>
 export default {
   name: 'Hidden',
-  data() {
-    return {
-      classGeneral: `${this.createClassSize()}`
-    };
-  },
   props: {
     xs: Boolean,
     sm: Boolean,
@@ -19,17 +14,20 @@ export default {
     lg: Boolean,
     xl: Boolean
   },
-  methods: {
-    createClassSize() {
+  computed: {
+    classGeneral() {
       let newClass = '';
 
-      newClass += this.xs ? 'hiddenVGR-xs ' : '';
-      newClass += this.sm ? 'hiddenVGR-sm ' : '';
-      newClass += this.md ? 'hiddenVGR-md ' : '';
-      newClass += this.lg ? 'hiddenVGR-lg ' : '';
-      newClass += this.xl ? 'hiddenVGR-xl ' : '';
+      newClass += this.xs ? ' hiddenVGR-xs' : '';
+      newClass += this.sm ? ' hiddenVGR-sm' : '';
+      newClass += this.md ? ' hiddenVGR-md' : '';
+      newClass += this.lg ? ' hiddenVGR-lg' : '';
+      newClass += this.xl ? ' hiddenVGR-xl' : '';
 
-      return newClass;
+      return `${newClass} ${this.$props.class || ''}`;
+    },
+    styleGeneral() {
+      return this.$props.style;
     }
   }
 };
