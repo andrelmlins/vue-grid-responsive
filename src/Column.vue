@@ -52,8 +52,8 @@ export default {
     }
 
     return {
-      classGeneral: `colVGR ${this.createClassSize()}`,
-      styleGeneral
+      classGeneral: `${this.createClassSize()} ${this.$props.class || ''}`,
+      styleGeneral: `${styleGeneral};${this.$props.style || ''}`
     };
   },
   methods: {
@@ -66,7 +66,7 @@ export default {
       return breakpoint ? `${(breakpoint / localColumns) * 100}%` : false;
     },
     createClassSize() {
-      let newClass = 'grid-column colVGR-xs ';
+      let newClass = 'colVGR colVGR-xs grid-column ';
 
       newClass += this.sm ? 'colVGR-sm ' : '';
       newClass += this.md ? 'colVGR-md ' : '';
@@ -110,7 +110,7 @@ export default {
         ? `--xlOffset:${this.getValue(this.xlOffset)}; `
         : '';
 
-      return newStyle;
+      return `${newStyle};${this.$props.style || ''}`;
     }
   }
 };
